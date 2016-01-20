@@ -18,8 +18,6 @@ defmodule HelloPhoenix.Router do
 
     get "/", PageController, :index
     get "/chris", Assignment3, :chris
-    get "/new", Assignment3, :newpage
-    get "/thing", Assignment3, :thing
   end
 
   # Other scopes may use custom stacks.
