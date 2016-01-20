@@ -4,4 +4,7 @@ defmodule HelloPhoenix.Assignment3 do
   def chris(conn, _params) do
     html conn, "chris hello"
   end
+  def kalyan(conn, _params) do
+    html conn, "kalyan hello"
+  end
 end
