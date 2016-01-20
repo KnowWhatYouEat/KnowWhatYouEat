@@ -7,4 +7,7 @@ defmodule HelloPhoenix.Assignment3 do
   def kalyan(conn, _params) do
     html conn, "kalyan hello"
   end
+def ashwag(conn, _params) do
+html conn, "ashwagggg hello"
+end
 end
