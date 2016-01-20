@@ -4,10 +4,12 @@ defmodule KWYE.Assignment3 do
   def chris(conn, _params) do
     html conn, "chris hello"
   end
+
   def kalyan(conn, _params) do
     html conn, "kalyan hello"
   end
-def ashwag(conn, _params) do
-html conn, "ashwagggg hello"
-end
+
+  def ashwag(conn, _params) do
+    html conn, "ashwagggg hello"
+  end
 end

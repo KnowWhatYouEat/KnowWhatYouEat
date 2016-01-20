@@ -19,7 +19,7 @@ defmodule KWYE.Router do
     get "/", PageController, :index
     get "/chris", Assignment3, :chris
     get "/kalyan", Assignment3, :kalyan
-get "/Ashwag", Assignment3, :ashwag
+    get "/Ashwag", Assignment3, :ashwag
   end
 
   # Other scopes may use custom stacks.
