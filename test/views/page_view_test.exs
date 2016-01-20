@@ -1,3 +1,3 @@
-defmodule HelloPhoenix.PageViewTest do
-  use HelloPhoenix.ConnCase, async: true
+defmodule KWYE.PageViewTest do
+  use KWYE.ConnCase, async: true
 end

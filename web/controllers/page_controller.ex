@@ -1,5 +1,5 @@
-defmodule HelloPhoenix.PageController do
-  use HelloPhoenix.Web, :controller
+defmodule KWYE.PageController do
+  use KWYE.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

@@ -1,7 +1,7 @@
-defmodule HelloPhoenix.Endpoint do
+defmodule KWYE.Endpoint do
   use Phoenix.Endpoint, otp_app: :hello_phoenix
 
-  socket "/socket", HelloPhoenix.UserSocket
+  socket "/socket", KWYE.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -35,5 +35,5 @@ defmodule HelloPhoenix.Endpoint do
     key: "_hello_phoenix_key",
     signing_salt: "CACHeMZb"
 
-  plug HelloPhoenix.Router
+  plug KWYE.Router
 end

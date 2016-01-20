@@ -1,5 +1,5 @@
-defmodule HelloPhoenix.PageControllerTest do
-  use HelloPhoenix.ConnCase
+defmodule KWYE.PageControllerTest do
+  use KWYE.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

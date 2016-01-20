@@ -1,5 +1,5 @@
-defmodule HelloPhoenix.Assignment3 do
-  use HelloPhoenix.Web, :controller
+defmodule KWYE.Assignment3 do
+  use KWYE.Web, :controller
 
   def chris(conn, _params) do
     html conn, "chris hello"

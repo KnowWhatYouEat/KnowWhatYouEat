@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :hello_phoenix, HelloPhoenix.Endpoint,
+config :hello_phoenix, KWYE.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "pqGfV/fRtGcS921akuBva41XnOtRrlR+L/wbWVkajNGXod8t84p//BNoJZSd3xpJ",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: HelloPhoenix.PubSub,
+  pubsub: [name: KWYE.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

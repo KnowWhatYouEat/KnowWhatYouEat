@@ -1,5 +1,5 @@
-defmodule HelloPhoenix.Router do
-  use HelloPhoenix.Web, :router
+defmodule KWYE.Router do
+  use KWYE.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,7 +13,7 @@ defmodule HelloPhoenix.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", HelloPhoenix do
+  scope "/", KWYE do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
@@ -23,7 +23,7 @@ get "/Ashwag", Assignment3, :ashwag
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", HelloPhoenix do
+  # scope "/api", KWYE do
   #   pipe_through :api
   # end
 end

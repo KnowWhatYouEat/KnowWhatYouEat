@@ -1,5 +1,5 @@
-defmodule HelloPhoenix.ErrorView do
-  use HelloPhoenix.Web, :view
+defmodule KWYE.ErrorView do
+  use KWYE.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"
