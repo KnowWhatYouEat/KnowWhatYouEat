@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :hello_phoenix, KWYE.Endpoint,
+config :kwye, KWYE.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :hello_phoenix, KWYE.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :hello_phoenix, KWYE.Repo,
+config :kwye, KWYE.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "hello_phoenix_test",
+  database: "kwye_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
