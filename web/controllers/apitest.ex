@@ -1,9 +1,6 @@
 defmodule KWYE.Apitest do
   use KWYE.Web, :controller
   
-  HTTPoison.start
-
-
   @api_key Application.get_env( :kwye, :ndb_key )
 
 
