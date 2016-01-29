@@ -23,6 +23,7 @@ defmodule KWYE.Router do
 
     get "/chrisapi", Assignment4, :chris
     get "/kalyanboppana", Assignment4, :kalyan
+    get "/Gashgari", Assignment4, :ashwag
   end
 
   # Other scopes may use custom stacks.

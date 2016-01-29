@@ -11,4 +11,10 @@ defmodule KWYE.Assignment4 do
   def kalyan(conn, _params) do
     html conn, Poison.Parser.parse!(~s({"name": "Devin Torres", "age": 27}))["name"]
   end
+
+  def ashwag(conn, _params) do 
+    Paratize.Pool.parallel_exec( [
+      fn -> :timer.sleep(5000) end,
+      fn -> html conn, " Ashwag Gashgari HElllo" end ] )
+  end
 end

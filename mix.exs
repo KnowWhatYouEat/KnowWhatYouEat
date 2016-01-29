@@ -38,7 +38,8 @@ defmodule KWYE.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:httpoison, ">= 0.0.0"},
-     {:poison, ">= 0.0.0"}]
+     {:poison, ">= 0.0.0"},
+     {:paratize, ">= 0.0.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
