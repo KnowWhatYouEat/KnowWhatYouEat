@@ -17,3 +17,6 @@ config :kwye, KWYE.Repo,
   database: "kwye_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+
+import_config "test.secret.exs"
