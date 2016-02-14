@@ -1,5 +1,5 @@
 defmodule KWYE.Endpoint do
-  use Phoenix.Endpoint, otp_app: :kwye
+  use Phoenix.Endpoint, otp_app: :k_w_y_e
 
   socket "/socket", KWYE.UserSocket
 
@@ -8,7 +8,7 @@ defmodule KWYE.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :kwye, gzip: false,
+    at: "/", from: :k_w_y_e, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the

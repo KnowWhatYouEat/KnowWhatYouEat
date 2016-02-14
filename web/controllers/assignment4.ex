@@ -1,7 +1,7 @@
 defmodule KWYE.Assignment4 do
   use KWYE.Web, :controller
   
-  @api_key Application.get_env( :kwye, :ndb_key )
+  @api_key Application.get_env( :k_w_y_e, :ndb_key )
 
 
   def chris(conn, _params) do
