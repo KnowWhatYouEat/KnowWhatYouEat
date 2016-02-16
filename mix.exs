@@ -2,7 +2,7 @@ defmodule KWYE.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :kwye,
+    [app: :k_w_y_e,
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -37,7 +37,9 @@ defmodule KWYE.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:poison, ">= 0.0.0"}]
+     {:httpoison, ">= 0.0.0"},
+     {:poison, ">= 0.0.0"},
+     {:paratize, ">= 0.0.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

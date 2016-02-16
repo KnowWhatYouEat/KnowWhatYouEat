@@ -17,10 +17,14 @@ defmodule KWYE.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    
     get "/chris", Assignment3, :chris
     get "/kalyan", Assignment3, :kalyan
     get "/Ashwag", Assignment3, :ashwag
+
+    get "/chrisapi", Assignment4, :chris
     get "/kalyanboppana", Assignment4, :kalyan
+    get "/Gashgari", Assignment4, :ashwag
   end
 
   # Other scopes may use custom stacks.

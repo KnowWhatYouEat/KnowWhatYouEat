@@ -6,7 +6,7 @@
 use Mix.Config
 
 # Configures the endpoint
-config :kwye, KWYE.Endpoint,
+config :k_w_y_e, KWYE.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "pqGfV/fRtGcS921akuBva41XnOtRrlR+L/wbWVkajNGXod8t84p//BNoJZSd3xpJ",

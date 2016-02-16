@@ -20,5 +20,5 @@ defmodule KWYE.Gettext do
 
   See the [Gettext Docs](http://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :kwye
+  use Gettext, otp_app: :k_w_y_e
 end
