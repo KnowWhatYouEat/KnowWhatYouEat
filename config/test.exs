@@ -19,4 +19,8 @@ config :k_w_y_e, KWYE.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 
-import_config "test.secret.exs"
+if File.exists?("config/test.secret.exs") do
+   import_config "test.secret.exs"
+else
+   config :k_w_y_e, ndb_key: System.get_env("NDB_KEY")
+end
