@@ -1,6 +1,7 @@
 language: elixir
 
-services: postgresql
+elixir:
+  - 1.2.1
 
 install:
   - mix local.hex --force
