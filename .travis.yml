@@ -2,7 +2,8 @@ language: elixir
 
 services: postgresql
 
-before_script:
+install:
+  - mix local.hex --force
   - mix deps.get --only test
 
 script:
