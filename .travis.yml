@@ -1,3 +1,9 @@
 language: elixir
 
 services: postgresql
+
+before_script:
+  - mix deps.get --only test
+
+script:
+  - mix test
