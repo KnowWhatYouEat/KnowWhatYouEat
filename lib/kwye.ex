@@ -15,6 +15,8 @@ defmodule KWYE do
       supervisor(KWYE.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(KWYE.Worker, [arg1, arg2, arg3]),
+      worker(LruCache, [:ndb_api_report_cache, 50], [id: "lru_report_cache"]),
+      worker(LruCache, [:ndb_api_search_cache, 50], [id: "lru_search_cache"])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
