@@ -19,7 +19,7 @@ defmodule KWYE.Mixfile do
   def application do
     [mod: {KWYE, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :lru_cache]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,7 +39,8 @@ defmodule KWYE.Mixfile do
      {:cowboy, "~> 1.0"},
      {:httpoison, ">= 0.0.0"},
      {:poison, ">= 0.0.0"},
-     {:paratize, ">= 0.0.0"}]
+     {:paratize, ">= 0.0.0"},
+     {:lru_cache, ">= 0.0.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
