@@ -19,7 +19,7 @@ defmodule KWYE.Mixfile do
   def application do
     [mod: {KWYE, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :lru_cache]]
+                    :phoenix_ecto, :postgrex, :httpoison, :lru_cache]]
   end
 
   # Specifies which paths to compile per environment.
