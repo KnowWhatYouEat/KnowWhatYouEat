@@ -23,19 +23,32 @@ defmodule KWYE.Helpers.NDB_API do
 
 
    def get_food_report(food_id, type \\ :basic) when type in @report_types do
-      "#{@ndb_base_url}reports/?ndbno=#{food_id}&type=#{report_type_to_string(type)}&format=json&api_key=#{@api_key}"
-         |> process_url
-         |> Map.get("report")
-         |> Map.get("food")
-         |> Map.get("nutrients")
-         |> Enum.reduce(%{}, fn(nutrient, acc) -> Map.put acc, nutrient["name"], (Map.delete nutrient, "name") end)
+      cache_id = food_id <> to_string(type)
+      if report = LruCache.get(:ndb_api_report_cache, cache_id) do
+      else
+         report = "#{@ndb_base_url}reports/?ndbno=#{food_id}&type=#{report_type_to_string(type)}&format=json&api_key=#{@api_key}"
+            |> process_url
+            |> Map.get("report")
+            |> Map.get("food")
+            |> Map.get("nutrients")
+            |> Enum.map( fn(nutrient) -> Map.delete nutrient, "measures" end)
+            |> Enum.reduce(%{}, fn(nutrient, acc) -> Map.put acc, nutrient["name"], (Map.delete nutrient, "name") end)
+         LruCache.put(:ndb_api_report_cache, cache_id, report)
+      end
+      report
    end
 
    def get_search_results(food_name, max \\ 50, offset \\ 0) do
-      "#{@ndb_base_url}search/?format=json&q=#{food_name}&sort=r&max=#{max}&offset=#{offset}&api_key=#{@api_key}"
-         |> process_url
-         |> Map.get("list")
-         |> Map.get("item")
+      cache_id = food_name <> to_string(max) <> to_string(offset)
+      if results = LruCache.get(:ndb_api_search_cache, cache_id) do
+      else
+         results = "#{@ndb_base_url}search/?format=json&q=#{food_name}&sort=r&max=#{max}&offset=#{offset}&api_key=#{@api_key}"
+            |> process_url
+            |> Map.get("list")
+            |> Map.get("item")
+         LruCache.put(:ndb_api_search_cache, cache_id, results)
+      end
+      results
    end
 
 end
