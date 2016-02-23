@@ -1,5 +1,8 @@
 defmodule KWYE.Helpers.NDB_API do
 
+   alias KWYE.Helpers.Utility, as: Utility
+
+
    @api_key Application.get_env(:k_w_y_e, :ndb_key)
 
    @ndb_base_url "http://api.nal.usda.gov/ndb/"
@@ -26,13 +29,22 @@ defmodule KWYE.Helpers.NDB_API do
       cache_id = food_id <> to_string(type)
       if report = LruCache.get(:ndb_api_report_cache, cache_id) do
       else
-         report = "#{@ndb_base_url}reports/?ndbno=#{food_id}&type=#{report_type_to_string(type)}&format=json&api_key=#{@api_key}"
+         raw_report = "#{@ndb_base_url}reports/?ndbno=#{food_id}&type=#{report_type_to_string(type)}&format=json&api_key=#{@api_key}"
             |> process_url
             |> Map.get("report")
             |> Map.get("food")
-            |> Map.get("nutrients")
-            |> Enum.map( fn(nutrient) -> Map.delete nutrient, "measures" end)
-            |> Enum.reduce(%{}, fn(nutrient, acc) -> Map.put acc, nutrient["name"], (Map.delete nutrient, "name") end)
+
+         measures = for m <- hd(raw_report["nutrients"])["measures"], into: %{}, do: {m["label"], m["eqv"]}
+
+         nutrients = raw_report["nutrients"]
+            |> Enum.map(fn(nutrient) -> Map.delete nutrient, "measures" end)
+            |> Utility.flatten_to_map_by_inner_key("name")
+
+         report = %{"name" => raw_report["name"],
+                     "id" => raw_report["ndbno"],
+                     "measures" => measures,
+                     "nutrients" => nutrients }
+
          LruCache.put(:ndb_api_report_cache, cache_id, report)
       end
       report
