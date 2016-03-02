@@ -5,8 +5,8 @@ defmodule KWYE.NutritionController do
       render conn, "search.html"
    end
 
-   def options(conn, _params) do
-      render conn, "options.html"
+   def options(conn, %{"ingredient" => ingredient} = params) do
+      render conn, "options.html", ingredient: ingredient
    end
 
 end

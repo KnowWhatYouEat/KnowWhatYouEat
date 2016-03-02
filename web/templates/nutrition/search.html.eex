@@ -1,1 +1,4 @@
-search page
+<form action="options">
+   Ingredient:<br>
+   <input type="text" name="ingredient"><br>
+</form>
