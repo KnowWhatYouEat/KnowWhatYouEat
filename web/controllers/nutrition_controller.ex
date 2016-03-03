@@ -2,6 +2,7 @@ defmodule KWYE.NutritionController do
    use KWYE.Web, :controller
 
    alias KWYE.Helpers.NDB_API, as: NDB
+   alias KWYE.Helpers.Nutrition, as: Nutrition
 
 
    def search(conn, params) do
@@ -29,8 +30,14 @@ defmodule KWYE.NutritionController do
       render conn, "measures.html", form_values: values
    end
 
-   def report(conn, _params) do
-      render conn, "report.html"
+   def report(conn, params) do
+      params = for {_, [ndbno, measure, amount]} <- params do
+         %{ndbno: ndbno, measure: measure, amount: elem(Float.parse(amount), 0)}
+      end
+
+      totals = Nutrition.get_totals(params)   
+
+      render conn, "report.html", results: totals
    end
 
 end

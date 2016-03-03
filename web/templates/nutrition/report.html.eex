@@ -1,1 +1,3 @@
-report
+<%= for %{"name" => name, "total" => total} <- @results do %>
+   <%= "#{name}: #{total}" %><br>
+<% end %>
