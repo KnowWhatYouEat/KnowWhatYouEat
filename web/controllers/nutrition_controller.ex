@@ -61,6 +61,7 @@ defmodule KWYE.NutritionController do
 
       totals = Nutrition.get_totals(params)
          |> Enum.sort(&test_group_order(&1["group"], &2["group"]))
+         |> Enum.map(fn(m) -> Map.update!(m, "total", &Float.to_string(&1, decimals: 2)) end)
 
       render conn, "report.html", results: totals
    end
