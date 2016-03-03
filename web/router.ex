@@ -20,6 +20,7 @@ defmodule KWYE.Router do
 
     get "/search", NutritionController, :search
     get "/options", NutritionController, :options
+    get "/measures", NutritionController, :measures
     
     get "/chris", Assignment3, :chris
     get "/kalyan", Assignment3, :kalyan

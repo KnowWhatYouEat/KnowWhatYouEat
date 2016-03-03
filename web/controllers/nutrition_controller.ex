@@ -11,11 +11,15 @@ defmodule KWYE.NutritionController do
    def options(conn, params) do
       %{"ingredient" => ingredient} = params
       save_params = Map.delete(params, "ingredient")
-      
+
       render conn, "options.html",
          options: NDB.get_search_results(ingredient),
          save_params: save_params,
          next_id: Enum.count(save_params)
+   end
+
+   def measures(conn, _params) do
+      render conn, "measures.html"
    end
 
 end
