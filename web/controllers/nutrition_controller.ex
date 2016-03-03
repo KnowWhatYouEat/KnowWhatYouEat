@@ -29,4 +29,8 @@ defmodule KWYE.NutritionController do
       render conn, "measures.html", form_values: values
    end
 
+   def report(conn, _params) do
+      render conn, "report.html"
+   end
+
 end
