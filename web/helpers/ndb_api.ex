@@ -37,7 +37,11 @@ defmodule KWYE.Helpers.NDB_API do
          measures = for m <- hd(raw_report["nutrients"])["measures"], into: %{}, do: {m["label"], m["eqv"]}
 
          nutrients = raw_report["nutrients"]
-            |> Enum.map(fn(nutrient) -> Map.delete nutrient, "measures" end)
+            |> Enum.map(fn(nutrient) ->
+               nutrient
+                  |> Map.update!("value", &(elem(Float.parse(&1), 0)))
+                  |> Map.delete("measures")
+               end)
             |> Utility.flatten_to_map_by_inner_key("name")
 
          report = %{"name" => raw_report["name"],
