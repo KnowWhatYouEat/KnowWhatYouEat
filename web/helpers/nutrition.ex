@@ -13,8 +13,14 @@ defmodule KWYE.Helpers.Nutrition do
             |> Util.flatten_to_map_by_inner_key("nutrient_id", delete_key: false)
       end
          |> Enum.reduce(fn(m, acc) ->
-               Map.merge(m, acc, fn(_, v1, v2) ->
-                  Map.put v1, "total", v1["total"] + v2["total"] end) end)
+               Map.merge(m, acc, fn(_, l, r) ->
+                  Map.merge(l, r, fn(key, v1, v2) ->
+                     case key do
+                        "total" -> v1 + v2
+                        "unit" -> if v1 == v2 do v2 else raise "UnitMismatch" end
+                        _ -> v2
+                     end
+                  end) end) end)
          |> Map.to_list
          |> Enum.map(&elem &1, 1)
    end
