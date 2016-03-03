@@ -3,6 +3,7 @@ defmodule KWYE.NutritionController do
 
    alias KWYE.Helpers.NDB_API, as: NDB
 
+
    def search(conn, params) do
       render conn, "search.html",
          save_params: params
@@ -18,8 +19,14 @@ defmodule KWYE.NutritionController do
          next_id: Enum.count(save_params)
    end
 
-   def measures(conn, _params) do
-      render conn, "measures.html"
+   def measures(conn, params) do
+      values = for {qid, ndbno} <- params do
+         %{"name" => name, "measures" => measures} = NDB.get_food_report(ndbno)
+         measures = for {name, _} <- measures do name end
+         %{"id" => qid, "name" => name, "measures" => measures, "ndbno" => ndbno}
+      end
+
+      render conn, "measures.html", form_values: values
    end
 
 end

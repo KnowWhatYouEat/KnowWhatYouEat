@@ -1,1 +1,29 @@
-measures
+<form>
+   <table>
+      <tr>
+         <th>Ingredient</th>
+         <th>Measure</th>
+         <th>Amount</th>
+      </tr>
+       <%= for %{"id" => id,
+                  "name" => name,
+                  "measures" => measures,
+                  "ndbno" => ndbno} <- @form_values do %>
+         <% id = id <> "[]" %>
+         <tr>
+         <input type="hidden" name="<%= id %>" id="ndbno" value="<%= ndbno %>">
+
+         <td><%= name %></td>
+
+         <td><select required name="<%= id %>" id="measure">
+            <%= for m <- measures do %>
+               <option value="<%= m %>" name="<%= m %>"><%= m %></option>
+            <% end %>
+         </select></td>
+
+         <td><input type="text" name="<%= id %>" id="amount"></td>
+         </tr>
+      <% end %>
+   </table>
+   <input type="Submit" value="Submit">
+</form>
