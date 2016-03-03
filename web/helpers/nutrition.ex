@@ -10,13 +10,13 @@ defmodule KWYE.Helpers.Nutrition do
          multiplier = eqv * amount / 100
 
          for n <- report["nutrients"] do Map.put(n, "total", n["value"] * multiplier) end
-            |> Util.flatten_to_map_by_inner_key("nutrient_id")
+            |> Util.flatten_to_map_by_inner_key("nutrient_id", delete_key: false)
       end
          |> Enum.reduce(fn(m, acc) ->
                Map.merge(m, acc, fn(_, v1, v2) ->
                   Map.put v1, "total", v1["total"] + v2["total"] end) end)
          |> Map.to_list
-         |> Enum.map(fn({k,v}) -> Map.put v, "nutrient_id", k end)
+         |> Enum.map(&elem &1, 1)
    end
 
 end
