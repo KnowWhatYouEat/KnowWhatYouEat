@@ -1,1 +1,6 @@
-<%= @ingredient %>
+<form>
+   <input type="submit" value="Select"><br>
+   <%= for %{"ndbno" => ndbno, "name" => ingredient_name} <- @options do %>
+      <input type="radio" name="id" value="<%= ndbno %>"><%= ingredient_name %><br>
+   <% end %>
+</form>
