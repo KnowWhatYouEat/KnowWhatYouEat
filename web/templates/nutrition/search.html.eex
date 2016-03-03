@@ -11,3 +11,12 @@
    <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
    <input type="submit" value="Enter amounts">
 </form>
+
+<table>
+   <tr>
+      <th>Selections</th>
+   </tr>
+   <%= for name <- @names do %>
+      <tr><td><%= name %></td></tr>
+   <% end %>
+</table>

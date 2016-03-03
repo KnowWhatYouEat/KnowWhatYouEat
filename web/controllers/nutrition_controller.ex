@@ -26,8 +26,12 @@ defmodule KWYE.NutritionController do
 
 
    def search(conn, params) do
+      names = for {qid, ndbno} <- params do
+         NDB.get_food_report(ndbno)["name"]
+      end
       render conn, "search.html",
-         save_params: params
+         save_params: params,
+         names: names
    end
 
    def options(conn, params) do
