@@ -5,3 +5,9 @@
    <input type="text" name="ingredient"><br>
    <input type="submit" value="Search">
 </form>
+
+
+<form action=<%= nutrition_path(@conn, :measures) %>>
+   <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
+   <input type="submit" value="Enter amounts">
+</form>
