@@ -5,6 +5,26 @@ defmodule KWYE.NutritionController do
    alias KWYE.Helpers.Nutrition, as: Nutrition
 
 
+   @group_order ["Proximates", "Minerals", "Vitamins", "Lipids", "Amino Acids", "Other"]
+
+   defp test_group_order(l, r) when l in @group_order and r in @group_order do
+      Enum.find_index(@group_order, &(&1 == l)) <= Enum.find_index(@group_order, &(&1 == r))
+   end
+
+   defp test_group_order(l, r) when l in @group_order and not r in @group_order do
+      false
+   end
+
+   defp test_group_order(l, r) when not l in @group_order and r in @group_order do
+      true
+   end
+
+   defp test_group_order(l, r) when not l in @group_order and not r in @group_order do
+      l <= r
+   end
+
+
+
    def search(conn, params) do
       render conn, "search.html",
          save_params: params
@@ -35,7 +55,8 @@ defmodule KWYE.NutritionController do
          %{ndbno: ndbno, measure: measure, amount: elem(Float.parse(amount), 0)}
       end
 
-      totals = Nutrition.get_totals(params)   
+      totals = Nutrition.get_totals(params)
+         |> Enum.sort(&test_group_order(&1["group"], &2["group"]))
 
       render conn, "report.html", results: totals
    end
