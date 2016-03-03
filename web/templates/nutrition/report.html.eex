@@ -1,3 +1,17 @@
-<%= for %{"name" => name, "total" => total} <- @results do %>
-   <%= "#{name}: #{total}" %><br>
-<% end %>
+<table>
+   <tr>
+      <th>Nutrient Type</th>
+      <th>Nutrient Name</th>
+      <th>Total</th>
+      <th>Unit</th>
+   </tr>
+
+   <%= for nutrient <- @results do %>
+      <tr>
+         <td><%= nutrient["group"] %></td>
+         <td><%= nutrient["name"] %></td>
+         <td><%= nutrient["total"] %></td>
+         <td><%= nutrient["unit"] %></td>
+      </tr>
+   <% end %>
+</table>
