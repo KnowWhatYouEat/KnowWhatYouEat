@@ -19,6 +19,11 @@ config :k_w_y_e, KWYE.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 
+config :k_w_y_e,
+  ndb_api_report_cache_size: 50,
+  ndb_api_search_cache_size: 50
+
+
 if File.exists?("config/test.secret.exs") do
    import_config "test.secret.exs"
 else

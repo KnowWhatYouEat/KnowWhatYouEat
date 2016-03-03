@@ -42,6 +42,11 @@ config :k_w_y_e, KWYE.Repo,
   pool_size: 10
 
 
+config :k_w_y_e,
+  ndb_api_report_cache_size: 0,
+  ndb_api_search_cache_size: 0
+
+
 # Finally import the config/dev.secret.exs
 # which should be versioned separately.
 import_config "dev.secret.exs"

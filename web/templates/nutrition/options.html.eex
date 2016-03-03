@@ -1,0 +1,8 @@
+<form action=<%= nutrition_path(@conn, :search) %>>
+   <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
+   
+   <input type="submit" value="Select"><br>
+   <%= for %{"ndbno" => ndbno, "name" => ingredient_name} <- @options do %>
+      <input type="radio" name=<%= @next_id %> value="<%= ndbno %>"><%= ingredient_name %><br>
+   <% end %>
+</form>

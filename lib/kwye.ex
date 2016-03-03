@@ -1,12 +1,14 @@
 defmodule KWYE do
   use Application
 
+  @report_cache_size Application.get_env(:k_w_y_e, :ndb_api_report_cache_size)
+  @search_cache_size Application.get_env(:k_w_y_e, :ndb_api_search_cache_size)
+
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
-    HTTPoison.start
 
     children = [
       # Start the endpoint when the application starts
@@ -15,6 +17,8 @@ defmodule KWYE do
       supervisor(KWYE.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(KWYE.Worker, [arg1, arg2, arg3]),
+      worker(LruCache, [:ndb_api_report_cache, @report_cache_size], [id: "lru_report_cache"]),
+      worker(LruCache, [:ndb_api_search_cache, @search_cache_size], [id: "lru_search_cache"])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
