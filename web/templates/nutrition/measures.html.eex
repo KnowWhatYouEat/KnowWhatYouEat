@@ -1,4 +1,4 @@
-<form>
+<form action=<%= nutrition_path(@conn, :report) %>>
    <table>
       <tr>
          <th>Ingredient</th>
