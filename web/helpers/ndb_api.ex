@@ -1,13 +1,11 @@
 defmodule KWYE.Helpers.NDB_API do
 
-   alias KWYE.Helpers.Utility, as: Utility
-
-
    @api_key Application.get_env(:k_w_y_e, :ndb_key)
 
    @ndb_base_url "http://api.nal.usda.gov/ndb/"
 
    @report_types [:basic, :full, :stats]
+   
 
    defp report_type_to_string(type) when type in @report_types do
       case type do
@@ -42,7 +40,6 @@ defmodule KWYE.Helpers.NDB_API do
                   |> Map.update!("value", &(elem(Float.parse(&1), 0)))
                   |> Map.delete("measures")
                end)
-            |> Utility.flatten_to_map_by_inner_key("name")
 
          report = %{"name" => raw_report["name"],
                      "id" => raw_report["ndbno"],
