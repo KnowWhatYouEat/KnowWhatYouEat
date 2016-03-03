@@ -30,6 +30,11 @@ config :k_w_y_e, KWYE.Repo,
    pool_size: 20
 
 
+config :k_w_y_e,
+  ndb_api_report_cache_size: 50,
+  ndb_api_search_cache_size: 50
+
+
 #API Key Config
 config :k_w_y_e,
    ndb_key: System.get_env("NDB_KEY")

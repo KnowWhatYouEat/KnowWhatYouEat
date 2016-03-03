@@ -1,0 +1,3 @@
+<%= for {k, v} <- @params do %>
+   <input type="hidden" name="<%= k %>" value="<%= v %>">
+<% end %>

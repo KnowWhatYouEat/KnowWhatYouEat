@@ -19,4 +19,13 @@ config :k_w_y_e, KWYE.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 
-import_config "test.secret.exs"
+config :k_w_y_e,
+  ndb_api_report_cache_size: 50,
+  ndb_api_search_cache_size: 50
+
+
+if File.exists?("config/test.secret.exs") do
+   import_config "test.secret.exs"
+else
+   config :k_w_y_e, ndb_key: System.get_env("NDB_KEY")
+end
