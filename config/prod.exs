@@ -13,11 +13,32 @@ use Mix.Config
 # which you typically run after static files are built.
 config :k_w_y_e, KWYE.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [scheme: "https", host: "mysterious-cove-77160.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  cache_static_manifest: "priv/static/manifest.json",
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
 
 # Do not print debug messages in production
 config :logger, level: :info
+
+
+#Database Config
+config :k_w_y_e, KWYE.Repo,
+   adapter: Ecto.Adapters.Postgres,
+   url: System.get_env("DATABASE_URL"),
+   pool_size: 20
+
+
+config :k_w_y_e,
+  ndb_api_report_cache_size: 50,
+  ndb_api_search_cache_size: 50
+
+
+#API Key Config
+config :k_w_y_e,
+   ndb_key: System.get_env("NDB_KEY")
+
 
 # ## SSL Support
 #
@@ -59,7 +80,3 @@ config :logger, level: :info
 # for the new static assets to be served after a hot upgrade:
 #
 #     config :k_w_y_e, KWYE.Endpoint, root: "."
-
-# Finally import the config/prod.secret.exs
-# which should be versioned separately.
-import_config "prod.secret.exs"
