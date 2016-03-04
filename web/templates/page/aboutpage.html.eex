@@ -18,7 +18,7 @@
   <section class="intro">
     <div class="column">
       <h3>ABOUT</h3>
-      <img src="about-us.jpg" alt="" class="profile"> </div>
+      <img src="http://www.valuegenie.com/wp-content/uploads/2014/10/problem-solution.jpg" alt="" widht="100" class="profile"> </div>
     <div class="column">
       <p>It all starts at some point and yes we started it today. We are striving hard to give you a sneek peek of your DIET. </p>
       <p>To show people a healthier way in their life style and to give them some best options which are away from their finger tips.</p>
@@ -26,22 +26,22 @@
   </section>
   <!-- Stats Gallery Section -->
   <div class="gallery">
-    <div class="thumbnail"> <a href="#"><img src="team.jpg" alt="" width="2000" class="cards"/></a>
+    <div class="thumbnail"> <a href="#"><img src="http://www.picturesof.net/_images_300/A_Colorful_Cartoon_Team_People_Holding_Up_a_Team_Sign_Royalty_Free_Clipart_Picture_101026-131625-540053.jpg" alt="" width="2000" class="cards"/></a>
       <h4>TEAM</h4>
       <p class="text_column">CHRIS VIGUS , KALYAN BOPPANA , ASHWAG GASHGARI</p>
     </div>
-    <div class="thumbnail"> <a href="#"><img src="intention.png" alt="" width="2000" class="cards"/></a>
+    <div class="thumbnail"> <a href="#"><img src="http://adhdcoachingforresults.com/wp-content/gallery/from-around-the-web/puzzle.png" alt="" width="2000" class="cards"/></a>
       <h4>INTENTION</h4>
       <p class="text_column">To give detailed information about the intake of vitamins, carbohydrates, sugars and calories to users based on their recipes
 </p>
     </div>
-    <div class="thumbnail"> <a href="#"><img src="problem.jpg" alt="" width="2000" class="cards"/></a>
+    <div class="thumbnail"> <a href="#"><img src="http://drneubrander.com/blog/wp-content/uploads/2011/08/Now-What-Do-I-Eat.jpg" alt="" width="2000" class="cards"/></a>
       <h4>PROBLEM</h4>
       <p class="text_column">People try their best to be more healthy and some of them actually suffer from some issues that forced  them to watch their food. Such as : 
 OBESITY is the burning issue all over the world.So, one should have a limit on his own diet.
 MALNUTRITION is also a major issue for those with restricted diets</p>
     </div>
-    <div class="thumbnail"> <a href="#"><img src="smart.jpg" alt="" width="2000" class="cards"/></a>
+    <div class="thumbnail"> <a href="#"><img src="http://www.smartnutrition.ca/wp-content/uploads/2014/03/transparent-header-1.png" alt="" width="2000" class="cards"/></a>
       <h4>SMART NUTRITION</h4>
       <p class="text_column">Nutrition on it's own cannot make a man perfect but it's the schedule which helps him to take food properly and grow healthily without malnutrition.</p>
     </div>
