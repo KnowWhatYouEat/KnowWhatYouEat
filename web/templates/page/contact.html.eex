@@ -20,29 +20,23 @@ A Nutrition Guid: Know What you eat
 </div>
 <div class="bouquet">
 <div class="hollyhack">
-<h3>Search Engine</h3><br/>
-<form action=<%= nutrition_path(@conn, :options) %>>
-   <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
+<h3>Contact Us:</h3><br/>
 
-   Ingredient:<br>
-   <input type="text" name="ingredient"><br>
-   <input type="submit" value="Search">
+<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+<div class="row">
+<label for="name">Your name:</label><br /><br/>
+<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+</div>
+<div class="row">
+<label for="email">Your email:</label><br /><br/>
+<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+</div>
+<div class="row">
+<label for="message">Your message:</label><br /><br/>
+<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br /><br/>
+</div>
+<input id="submit_button" type="submit" value="Send email" />
 </form>
-
-
-<form action=<%= nutrition_path(@conn, :measures) %>>
-   <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
-   <input type="submit" value="Enter amounts">
-</form>
-
-<table>
-   <tr>
-      <th>Selections</th>
-   </tr>
-   <%= for name <- @names do %>
-      <tr><td><%= name %></td></tr>
-   <% end %>
-</table>
 </div>
 </div>
 

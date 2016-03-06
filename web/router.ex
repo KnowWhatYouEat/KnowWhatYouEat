@@ -17,6 +17,8 @@ defmodule KWYE.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/contact", PageController, :contact
+    get "/about", PageController, :about
 
     get "/search", NutritionController, :search
     get "/options", NutritionController, :options
