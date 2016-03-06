@@ -5,11 +5,11 @@ defmodule KWYE.PageController do
     render conn, "index.html"
   end
 
-  def contact(conn, params) do
+  def contact(conn, _params) do
     render conn, "contact.html"
   end
 
-  def about(conn, params) do
+  def about(conn, _params) do
     render conn, "about.html"
   end
 
