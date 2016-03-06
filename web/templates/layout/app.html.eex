@@ -28,7 +28,6 @@
       <br></div>
 
       <div class="menu">
-        <a href=<%= nutrition_path(@conn, :measures) %>>Measures</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a href=<%= nutrition_path(@conn, :search) %>>Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a href=<%= page_path(@conn, :about) %>>About Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a href=<%= page_path(@conn, :contact) %>>Contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;
