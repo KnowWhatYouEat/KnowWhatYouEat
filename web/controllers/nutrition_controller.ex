@@ -65,5 +65,5 @@ defmodule KWYE.NutritionController do
 
       render conn, "report.html", results: totals
    end
-
 end
+
