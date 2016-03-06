@@ -1,3 +1,4 @@
+<h3>Search Engine</h3><br/>
 <form action=<%= nutrition_path(@conn, :options) %>>
    <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
 
