@@ -28,8 +28,13 @@
       <br></div>
 
       <div class="menu">
-      <a href="http://localhost:4000/measures">Measures</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/search">Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/about">about us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/contact">contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000">Homepage</a>
+        <a href="http://localhost:4000/measures">Measures</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="http://localhost:4000/search">Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="http://localhost:4000/about">about us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="http://localhost:4000/contact">contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="http://localhost:4000">Homepage</a>
       </div>
+
       <div class="bouquet">
       <div class="hollyhack">
 
@@ -46,10 +51,9 @@
       © Cal Poly Pomona University
       <!-- Designed by DreamTemplate. Please leave link unmodified. -->
       <br><br><a href="http://www.dreamtemplate.com" title="Website Templates" target="_blank"><small>Website templates</small></a>
-
       </div>
 
-      </div>
+      </div> <!-- /contain -->
 
 
     </div> <!-- /container -->
