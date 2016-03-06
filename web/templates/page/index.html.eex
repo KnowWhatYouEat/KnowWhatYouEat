@@ -1,36 +1,44 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" title="screen stylesheet" type="text/css" media="screen" href="style.css" />
+<title>Your Home Page</title>
+</head>
+<body>
+
+
+<div id="contain">
+
+<div class="title">
+A Nutrition Guid: Know What you eat
+<br></div>
+
+<div class="menu">
+<a href="http://localhost:4000/measures">Measures</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/search">Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/about">about us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/contact">contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000">Homepage</a>
 </div>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="http://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
-  </div>
+<div class="bouquet">
+<div class="hollyhack">
+<h3>Your LifeStyle</h3>
+People around the world spend a lot of time and money to take care of thier health, skin, and hair. In addition, food is our primary resource for better health
+and for improving our health which is not just restricited to medicines, instead we have to avoid the medicines because of thier effect. As matter of fact, a good healthy diet can
+really make a huge differnce in people health and Know what you eat website can provide you with the detailed nutrution information about the food you eat, helping
+people to prevent or even cure diseases. <br />
+<br />
+<img src="/images/pic2.jpg" alt="Smiley face" height="250" " width="500" border="5">
 </div>
+</div>
+
+<div class="footer">
+© Cal Poly Pomona University
+<!-- Designed by DreamTemplate. Please leave link unmodified. -->
+<br><br><a href="http://www.dreamtemplate.com" title="Website Templates" target="_blank"><small>Website templates</small></a>
+
+</div>
+
+</div>
+
+</body>
+</html>
