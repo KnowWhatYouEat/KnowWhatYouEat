@@ -48,8 +48,10 @@ defmodule KWYE.NutritionController do
       values = for {qid, ndbno} <- params do
          %{"name" => name, "measures" => measures} = NDB.get_food_report(ndbno)
          measures = for {name, _} <- measures do name end
+
          %{"id" => qid, "name" => name, "measures" => measures, "ndbno" => ndbno}
       end
+         |> Enum.sort(&(elem(Integer.parse(&1["id"]), 0) <= elem(Integer.parse(&2["id"]), 0)))
 
       render conn, "measures.html", form_values: values
    end

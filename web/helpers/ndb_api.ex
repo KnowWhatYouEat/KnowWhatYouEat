@@ -32,7 +32,7 @@ defmodule KWYE.Helpers.NDB_API do
             |> Map.get("report")
             |> Map.get("food")
 
-         measures = for m <- hd(raw_report["nutrients"])["measures"], into: %{}, do: {m["label"], m["eqv"]}
+         measures = for m <- hd(raw_report["nutrients"])["measures"], into: %{"gram" => 1.0}, do: {m["label"], m["eqv"]}
 
          nutrients = raw_report["nutrients"]
             |> Enum.map(fn(nutrient) ->
