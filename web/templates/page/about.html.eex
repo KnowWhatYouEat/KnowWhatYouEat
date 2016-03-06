@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" title="screen stylesheet" type="text/css" media="screen" href="style.css" />
 <title>Your Home Page</title>
@@ -20,30 +22,17 @@ A Nutrition Guid: Know What you eat
 </div>
 <div class="bouquet">
 <div class="hollyhack">
-<h3>Search Engine</h3><br/>
-<form action=<%= nutrition_path(@conn, :options) %>>
-   <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
+<center><h2>About Us</h2></center>
 
-   Ingredient:<br>
-   <input type="text" name="ingredient"><br>
-   <input type="submit" value="Search">
-</form>
-
-
-<form action=<%= nutrition_path(@conn, :measures) %>>
-   <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
-   <input type="submit" value="Enter amounts">
-</form>
-
-<table>
-   <tr>
-      <th>Selections</th>
-   </tr>
-   <%= for name <- @names do %>
-      <tr><td><%= name %></td></tr>
-   <% end %>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="left">We are three master students of cal poly pomona University, and this website is our advanced software engineering project and our aim is to provide you with the detailed information data that you have in your food. It is similar to the nutrition facts that comes on food boxes.</td>
+<td width="50%" align="left"><img src="/images/pic2.png" alt="Smiley face" height="400" width="230" border="5"></td>
+</tr>
 </table>
+
 </div>
+
 </div>
 
 <div class="footer">
