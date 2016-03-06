@@ -43,8 +43,8 @@ config :k_w_y_e, KWYE.Repo,
 
 
 config :k_w_y_e,
-  ndb_api_report_cache_size: 0,
-  ndb_api_search_cache_size: 0
+  ndb_api_report_cache_size: 50,
+  ndb_api_search_cache_size: 50
 
 
 # Finally import the config/dev.secret.exs

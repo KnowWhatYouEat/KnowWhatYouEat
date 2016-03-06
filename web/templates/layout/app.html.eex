@@ -13,21 +13,43 @@
 
   <body>
     <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
+
+      <div id="contain">
+
+      <div class="title">
+      Know What You Eat
+      <br></div>
+
+      <div class="menu">
+        <a href=<%= nutrition_path(@conn, :search) %>>New Recipe</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href=<%= page_path(@conn, :about) %>>About Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href=<%= page_path(@conn, :contact) %>>Contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href=<%= page_path(@conn, :index) %>>Homepage</a>
+      </div>
+
+      <div class="bouquet">
+      <div class="hollyhack">
+
+
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
+
+
+      </div>
+      </div>
+
+      <div class="footer">
+      <!-- Designed by DreamTemplate. Please leave link unmodified. -->
+      <br><br><a href="http://www.dreamtemplate.com" title="Website Templates" target="_blank"><small>Website templates</small></a>
+      </div>
+
+      </div> <!-- /contain -->
+
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
