@@ -28,11 +28,11 @@
       <br></div>
 
       <div class="menu">
-        <a href="http://localhost:4000/measures">Measures</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="http://localhost:4000/search">Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="http://localhost:4000/about">about us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="http://localhost:4000/contact">contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="http://localhost:4000">Homepage</a>
+        <a href=<%= nutrition_path(@conn, :measures) %>>Measures</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href=<%= nutrition_path(@conn, :search) %>>Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href=<%= page_path(@conn, :about) %>>about us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href=<%= page_path(@conn, :contact) %>>contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href=<%= page_path(@conn, :index) %>>Homepage</a>
       </div>
 
       <div class="bouquet">
