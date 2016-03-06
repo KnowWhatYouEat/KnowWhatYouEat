@@ -21,7 +21,7 @@
             <% end %>
          </select></td>
 
-         <td><input required type="text" name="<%= id %>" id="amount"></td>
+         <td><input required type="number" step="any" name="<%= id %>" id="amount"></td>
          </tr>
       <% end %>
    </table>
