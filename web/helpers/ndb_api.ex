@@ -52,6 +52,7 @@ defmodule KWYE.Helpers.NDB_API do
    end
 
    def get_search_results(food_name, max \\ 50, offset \\ 0) do
+      food_name = URI.encode_www_form(food_name)
       cache_id = food_name <> to_string(max) <> to_string(offset)
       if results = LruCache.get(:ndb_api_search_cache, cache_id) do
       else

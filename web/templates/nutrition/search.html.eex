@@ -1,25 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" title="screen stylesheet" type="text/css" media="screen" href="style.css" />
-<title>Your Home Page</title>
-</head>
-<body>
-
-
-<div id="contain">
-
-<div class="title">
-A Nutrition Guid: Know What you eat
-<br></div>
-
-<div class="menu">
-<a href="http://localhost:4000/measures">Measures</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/search">Search</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/about">about us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000/contact">contact</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://localhost:4000">Homepage</a>
-</div>
-<div class="bouquet">
-<div class="hollyhack">
 <h3>Search Engine</h3><br/>
 <form action=<%= nutrition_path(@conn, :options) %>>
    <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
@@ -43,17 +21,3 @@ A Nutrition Guid: Know What you eat
       <tr><td><%= name %></td></tr>
    <% end %>
 </table>
-</div>
-</div>
-
-<div class="footer">
-© Cal Poly Pomona University
-<!-- Designed by DreamTemplate. Please leave link unmodified. -->
-<br><br><a href="http://www.dreamtemplate.com" title="Website Templates" target="_blank"><small>Website templates</small></a>
-
-</div>
-
-</div>
-
-</body>
-</html>

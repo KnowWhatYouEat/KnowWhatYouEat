@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html {
      background: #000000 url("/images/bgline.jpg") repeat-x top left;
+     background-position: 0px 16px
  }
 body {
     font-family: "Bitstream Vera Sans",Verdana,Arial,Helvetica,Sans,"Bitstream Vera Serif";
@@ -13,6 +14,10 @@ body {
     color: #feffb7;
     background: #000000 url("/images/bg.jpg") no-repeat scroll top left;
     margin: 0px;
+}
+
+th, td {
+   padding: 0px 25px;
 }
 
 a {
@@ -69,6 +74,24 @@ h3 {
     font-weight:normal;
     font-size: 1.5em;
     letter-spacing:-2px;
+}
+h2 {
+    clear:both;
+    margin:10px 0 10px 0;
+    color:#9BD67C;
+    font-weight:normal;
+    font-size: 2em;
+    letter-spacing:-2px;
+}
+
+.footer {
+    clear: both;
+    position: relative;
+    top: 20px;
+    padding-top: 3px;
+    border-top: 1px solid #cbcd65;
+    font-size: .75em;
+    text-align: right;
 }
 h2 {
     clear:both;
