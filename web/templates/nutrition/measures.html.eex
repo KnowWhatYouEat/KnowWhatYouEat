@@ -1,5 +1,6 @@
 <h3>Measures</h3><br/>
 <form action=<%= nutrition_path(@conn, :report) %>>
+   Servings:&nbsp;<input required type="number" name="servings" id="servings" value=1 size="3">
    <table>
       <tr>
          <th>Ingredient</th>

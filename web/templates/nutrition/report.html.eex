@@ -1,15 +1,16 @@
+Total servings:&nbsp;<%= @servings %>
 <table>
    <tr>
-      <th>Name</th>
-      <th>Total</th>
-      <th>Unit</th>
+      <th align="right">Nutrient</th>
+      <th align="left">Amount</th>
+      <th align="left">Unit</th>
    </tr>
 
    <%= for nutrient <- @results do %>
       <tr>
-         <td><%= nutrient["name"] %></td>
-         <td><%= nutrient["total"] %></td>
-         <td><%= nutrient["unit"] %></td>
+         <td align="right"><%= nutrient["name"] %></td>
+         <td align="left"><%= nutrient["total"] %></td>
+         <td align="left"><%= nutrient["unit"] %></td>
       </tr>
    <% end %>
 </table>

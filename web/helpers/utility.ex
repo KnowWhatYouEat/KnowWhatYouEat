@@ -12,4 +12,8 @@ defmodule KWYE.Helpers.Utility do
       for i <- mlist, into: %{}, do: {i[inner_key], i}
    end
 
+   def index_less_than_eq(e, l, r) do
+      Enum.find_index(e, &(&1 == l)) <= Enum.find_index(e, &(&1 == r))
+   end
+
 end

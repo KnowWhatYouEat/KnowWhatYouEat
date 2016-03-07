@@ -2,22 +2,27 @@
 <form action=<%= nutrition_path(@conn, :options) %>>
    <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
 
-   Ingredient:<br>
+   Add an Ingredient:<br>
    <input type="text" name="ingredient"><br>
-   <input type="submit" value="Search">
+   <input type="submit" value="Search by Name">
 </form>
+<br>
+<br>
 
-
+Finished adding ingredients?<br>
 <form action=<%= nutrition_path(@conn, :measures) %>>
    <%= render KWYE.SharedView, "_save_parameter_inputs.html", params: @save_params %>
    <input type="submit" value="Enter amounts">
 </form>
 
-<table>
-   <tr>
-      <th>Selections</th>
-   </tr>
-   <%= for name <- @names do %>
-      <tr><td><%= name %></td></tr>
-   <% end %>
-</table>
+<%= if not Enum.empty? @names do %>
+   <br>
+   <table>
+      <tr>
+         <th>Selections</th>
+      </tr>
+      <%= for name <- @names do %>
+         <tr><td><%= name %></td></tr>
+      <% end %>
+   </table>
+<% end %>
