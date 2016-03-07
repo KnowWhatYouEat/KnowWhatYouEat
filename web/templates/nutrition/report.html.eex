@@ -2,7 +2,7 @@ Total servings:&nbsp;<%= @servings %>
 <table>
    <tr>
       <th align="right">Nutrient</th>
-      <th align="left">Amount Per Serving</th>
+      <th align="left">Amount</th>
       <th align="left">Unit</th>
    </tr>
 
