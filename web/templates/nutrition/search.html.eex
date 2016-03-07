@@ -13,11 +13,14 @@
    <input type="submit" value="Enter amounts">
 </form>
 
-<table>
-   <tr>
-      <th>Selections</th>
-   </tr>
-   <%= for name <- @names do %>
-      <tr><td><%= name %></td></tr>
-   <% end %>
-</table>
+<%= if not Enum.empty? @names do %>
+   <br>
+   <table>
+      <tr>
+         <th>Selections</th>
+      </tr>
+      <%= for name <- @names do %>
+         <tr><td><%= name %></td></tr>
+      <% end %>
+   </table>
+<% end %>
