@@ -57,15 +57,20 @@ defmodule KWYE.NutritionController do
    end
 
    def report(conn, params) do
+      {servings, params} = Map.pop(params, "servings")
+
+      servings = elem(Integer.parse(servings), 0)
       params = for {_, [ndbno, measure, amount]} <- params do
-         %{ndbno: ndbno, measure: measure, amount: elem(Float.parse(amount), 0)}
+         %{ndbno: ndbno, measure: measure, amount: elem(Float.parse(amount), 0)/servings}
       end
 
       totals = Nutrition.get_totals(params)
          |> Enum.sort(&test_group_order(&1["group"], &2["group"]))
          |> Enum.map(fn(m) -> Map.update!(m, "total", &Float.to_string(&1, decimals: 2)) end)
 
-      render conn, "report.html", results: totals
+      render conn, "report.html",
+         results: totals,
+         servings: servings
    end
 end
 
