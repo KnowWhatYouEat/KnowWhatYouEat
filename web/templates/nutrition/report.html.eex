@@ -1,8 +1,8 @@
 Total servings:&nbsp;<%= @servings %>
 <table>
    <tr>
-      <th>Name</th>
-      <th>Total Per Serving</th>
+      <th>Nutrient</th>
+      <th>Amount Per Serving</th>
       <th>Unit</th>
    </tr>
 
